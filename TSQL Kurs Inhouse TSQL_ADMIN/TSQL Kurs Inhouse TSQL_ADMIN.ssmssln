@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "TSQL Kurs Inhouse TSQL_ADMIN", "TSQL Kurs Inhouse TSQL_ADMIN\TSQL Kurs Inhouse TSQL_ADMIN.ssmssqlproj", "{FF234452-0ED7-46B9-B70F-1FA0DB2DFB4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF234452-0ED7-46B9-B70F-1FA0DB2DFB4E}.Default|Default.ActiveCfg = Default
+		{C4A0367B-C326-44A0-ACDA-F38154D33F35}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1697FEB-8279-4F8D-B72E-84A6BF041839}
+	EndGlobalSection
+EndGlobal
