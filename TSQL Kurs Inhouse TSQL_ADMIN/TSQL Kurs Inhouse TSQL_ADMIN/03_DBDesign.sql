@@ -67,3 +67,55 @@ select * from orders where  year(orderdate) = 1997
 select * from orders where  datepart(yy,orderdate) = 1997
 
 ---ms ist nicht genau da datetime nur 2 bis 3 ms genau
+
+
+
+..--Physische Design
+
+create table tx (id int, spx char(4100), sp2 varchar(4100))
+
+/*
+1 DS mit 4100bytes--> 1 Seiten
+1 MIO DS--> 1 MIO Seiten--> 8 GB (HDD und RAM je 8 GB), obwohl nur 4,1 GB
+
+
+*/
+
+use testdb
+
+
+
+--gilt nur in einer Session
+set statistics io, time on -- Anzahl der Seiten, CPU Dauer in ms und gesamt Dauer in ms
+
+select * from t1 where id = 10--Lesevorgänge = Seiten = 20000
+
+--20000*8 = 160MB
+
+dbcc showcontig('t1')
+--- Gescannte Seiten.........................................: 20000
+--- Mittlere Seitendichte (voll).....................: 50.79%
+set statistics io, time off
+
+
+--Massnahmen: 
+--Datentypen anpassen
+--muss char sein muss n sein
+
+--DB Redesign
+
+--4100 -- 4000 + 100
+
+-- 8GB       2DS/Seite = 500.000 Seiten  + 80DS/Seiten--> 12500--> 110 MB
+					--4,1 GB
+
+--geht s auch ohne Anw Redesign?
+
+
+
+select count(*) from t1
+
+
+
+
+
