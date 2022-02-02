@@ -1,4 +1,4 @@
-# SQL Kurs Inhouse Feb 2022 
+# SQL Kurs Inhouse Feb 2022 ...los
  
 
  # 1.	Installation – best practice
