@@ -6,8 +6,10 @@ go
 
 select * from Orders where CustomerID='HANAR'
 go
-select * from Orders 
-	where   CustomerID='HANAR'
+select *
+from Orders 
+	where 
+	CustomerID='HANAR'
 go
 
 

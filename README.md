@@ -16,6 +16,8 @@
 # 4.	Regelm. Wartung
 ## a.	Sicherung SystemDBs
 ## b.	Sonstige Wartungsaufgaben
+
+--TAG 2
 # 5.	Was ist besser: Proceduren – Functions – Sichten – adhoc SQL
 ## a.	Kleine Einstiegsübung, die am Ende des Kurses aufgelöst wird
 # 6.	Exkurs
