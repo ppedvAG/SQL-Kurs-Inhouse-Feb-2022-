@@ -14,8 +14,20 @@ where  year(orderdate) = 1996
 
 
 --RngSumme
+--Im tatsächlichen Plan taucht die Tabelle Order details nicht auf.. !! auch in statistics nicht !!!!!!
+--obwohl der größte aufwand genau dort erfolgt...
+
+create function rngSumme (@oid int) returns money
+as
+begin
+return (select sum(UnitPrice*quantity) from [Order Details] where orderid = @oid)
+end
 
 
+alter table orders add RngSumme as dbo.rngsumme(orderid)
+
+set statistics io, time on
+select * from orders
 
 
 

@@ -40,6 +40,7 @@ order by Stadt
 
 
 --BAD VIEWS
+--wenn sie zweckentfremdet werden
 
 
 create view v1
@@ -60,8 +61,8 @@ from customers c inner join orders o on c.CustomerID=o.CustomerID
 
 --357  78   176
 
---nciht zwekentfremden
-select CompanyName ,Freight from v1 where freight < 10
+--nicht zweckentfremden
+select CompanyName ,Freight from v1 where freight < 10 --..es werden alle Tabelle der View durchsucht....
 
 
 select c.CompanyName ,o.Freight
@@ -69,11 +70,14 @@ from customers c inner join orders o on c.CustomerID=o.CustomerID
 										where freight < 10
 										order by 1
 
+--mal kurz aufräumen, falls vorhanden
 drop table slf 
 drop view v2
 
+--Sichten mit falschen Resultaten
+
 create table slf ( id int , stadt int, land int)
-create table hr.slf ( id int , stadt int, land int)
+
 
 
 select * from slf
@@ -88,27 +92,28 @@ select 3,30,300
 select * from slf
 
 
-alter view v2 with schemabinding
+alter view v2-- später mit  with schemabinding
 as
 select id, stadt, fluss  from dbo.slf
 
 
-select * from v2
+select * from v2 
 
 
 
 alter table slf add fluss int
 update slf set fluss = ID *1000
 
+--nicht alle Spalten werden angezeigt!!!
 
+alter view v2 with schemabinding
+as
+select id, stadt, fluss  from dbo.slf
 
 alter table slf drop column land
 
-kjhjkdah
+--error geht nicht !! Sichtergebnis wäre falsch
 
-löschmich
-delme
-v25
 
 
 

@@ -1,3 +1,5 @@
+--Um den Spaﬂ zu haben: zuerst mit ScopedDatabase_ADR_Fill2.sql probieren
+--
 
 --ab SQL 2019
 ALTER DATABASE NewStyle SET ACCELERATED_DATABASE_RECOVERY = ON; --Version 1.0
@@ -25,9 +27,20 @@ while @i< 1000000
 update test1 set nummer = 100000, Datum= GETDATE()
 
 delete from test1
+--Stop!!
+--den Restore getrennt ausf¸hren
+rollback --Wie lange hat das gedauert???
 
----erst sp‰ter
-rollback
+--Deutlich schneller als mit DB unter SQL 2017/2016 oder mit geringeren Kompabilit‰tsgrad als 150
+--Grund: Man verwendet statt TX erneut umszusetzen und am Ende sogr Rollbac zu organieren
+--wird auf Versionierung gesetzt und teilweise IM Strukturen... alles im Hintergrund :-)
+
+--Kurz_ Statt up del und ins zur¸ckzuspielen, kehrt  einfach zu dem Status zur¸ck, der vor der TX galt... wie Momentaufnahme
+
+
+
+
+--Kann man auch  etwas beoabachten ..f¸r DMV Enthusiasten
 
 select * from sys.dm_tran_persistent_version_store
 

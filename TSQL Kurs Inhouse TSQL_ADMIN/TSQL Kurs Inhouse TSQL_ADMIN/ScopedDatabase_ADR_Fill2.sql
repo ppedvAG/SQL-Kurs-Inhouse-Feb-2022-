@@ -1,6 +1,8 @@
 
 --Test2
 use oldstyle;
+GO
+
 drop table if exists test1;
 GO
 create table test1(id int, spx char(50), nummer int, Datum datetime);
@@ -21,5 +23,6 @@ while @i< 1000000
 update test1 set nummer = 100000, Datum= GETDATE()
 
 delete from test1
---erst später
-rollback
+--Stop!!
+--den Restore getrennt ausführen
+rollback --wie lange dauert der Restore???

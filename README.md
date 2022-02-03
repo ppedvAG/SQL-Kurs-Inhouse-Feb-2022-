@@ -14,15 +14,14 @@
 ## a.	Query Store
 ## b.	DMVs
 # 4.	Regelm. Wartung
-## a.	Sicherung SystemDBs
+## a.	Sicherung SystemDBs   LATCH
 ## b.	Sonstige Wartungsaufgaben
 
 --TAG 2
 # 5.	Was ist besser: Proceduren – Functions – Sichten – adhoc SQL
 ## a.	Kleine Einstiegsübung, die am Ende des Kurses aufgelöst wird
 # 6.	Exkurs
-## a.	SSMS kleine Tricks in SSMS 
-## b.	Azure Data Studio… wann ist das Ding cool?
+## a.	SQL Sentry Plan Explorer
 # 7.	Indizes
 ## a.	Welche gibt’s?
 ## b.	Wann ist welcher besonders geeignet (Bezug zum DB Design – Diagramm)
@@ -34,6 +33,6 @@
 # 9.	TSQL Neuerungen
 ## a.	An Hand von Problemstellungen Neuerungen verstehen  
 	Aus Neuerungen kann man viele Rückschlüsse ziehen, was man in älteren Editionen hätte nicht machen sollen
-## b.	Window Functions, CTE, 
+
 
 

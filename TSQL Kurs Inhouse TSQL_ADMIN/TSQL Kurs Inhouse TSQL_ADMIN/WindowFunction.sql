@@ -1,6 +1,13 @@
 --Window Function
+--Sind echt cool... Zeilenummer vergeben-
+--Rank vergene
+--auch Ränge pro Land und Fracht zb.
 
-----F() OVER(PARTITION BY Col1 ORDER BY Col2 DESC)
+-- Rang pro Land und innerhalb eines Landes pro Fracht aufsteigend.
+--
+
+
+----F()  OVER ( PARTITION BY Col1,Col2.. ORDER BY Col2, col3 DES|ASC)
 
 --ROW_NUMBER------------
 --fortlaufende Zahl--
@@ -11,9 +18,16 @@ SELECT
 		customerid,
 		freight,
 		row_number () OVER ( 	PARTITION BY employeeid
-			ORDER BY freight DESC
+												ORDER BY freight DESC
 		) Rang
 	FROM orders
+
+	SELECT
+				ShipCountry,	employeeid,freight,		
+		row_number () OVER ( 	PARTITION BY shipcountry,employeeid
+												ORDER BY freight asc
+												) Rang
+	FROM orders order by Shipcountry, employeeid, freight
 
 
 
@@ -68,9 +82,7 @@ select
 ---,SUM(Col1) OVER (PARTITION BY Col2)
 ---ORDER BY Col3   ROWS UNBOUNDED PRECEDING)--aufsummieren
 
-select * from t1
-select id, sum(x) over ( order by id  ROWS UNBOUNDED PRECEDING) 
-from t1
+---auch abgefahren: wir können sozusagen Fenster beobachten, die wir selbst definieren
 
 select orderid, 
 	sum(unitprice*quantity)

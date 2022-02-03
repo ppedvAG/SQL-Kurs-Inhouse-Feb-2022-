@@ -12,7 +12,7 @@
 -- https://glennsqlperformance.com/resources/
 
 
-andreasr@ppedv.de
+---andreasr@ppedv.de
 
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 

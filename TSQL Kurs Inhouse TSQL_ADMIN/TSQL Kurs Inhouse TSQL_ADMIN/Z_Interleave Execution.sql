@@ -1,5 +1,9 @@
-exec sp_Restore_AdventureDBs
+--exec sp_Restore_AdventureDBs
+--AdventureWorks2014 kann man sich auf Github besorgen
 
+--SQL Server schätzt F() mit Tabellenvariablen  ein mit 1 oder 100 Ergebniszeilen. Egal wieviel tats drin sind..!
+--Der Plan dazu kann also nur suboptimal sein, da  weder 1 noch 100 die Realität wiederspiegelen
+-- Arbeitsspeicherschätzung.. CPU steigt etc.... IX Wahl usw..
 
 
 USE AdventureWorks2014

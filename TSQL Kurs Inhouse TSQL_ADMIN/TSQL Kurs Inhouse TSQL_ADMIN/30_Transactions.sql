@@ -3,35 +3,41 @@
 --so kurz wie möglich
 
 --INS UP  DEL
--
 
-BEGIN TRAN
-select @@TRANCOUNT
-
-select * from customers
-update customers set city = 'Bonn' 
-where customerid = 'ALFKI'
-
-COMMIT --bestätigt eine TX
+--Transactions
 
 
-ROLLBACK --macht TX rückgängig
+-- INS UP DEL 
+
+--Sperrniveaus: Zeile, Seite, Block, Partionen, Tabellen, DB
+--jede Sperre kostet 91 bytes
+--Sperren können nur so granular gesetzt werden, wie sie auch gefunden werden können..
+
+--Indizes helfen...--> Zeilensperre!!
 
 
 select * into kunden from customers
 
-
---Ohne IX: wird alles gesperrt
---Sperrniveau: Zeile, Seite, Block,  Partition, Tabelle
-
-
-
 begin tran
-update kunden set city = 'Bonn' where customerid = 'ALFKI'
 select @@TRANCOUNT
+update  kunden set city = 'Landshut' where customerid = 'ALFKI' --nur wenn IX, dann auch die Sperre für den einen Datensatz, sonst komplette Tabelle
 select * from kunden
-commit
-rollback
+
+rollback --Rückgängig
+
+commit --Bestätigen
+
+
+--Alternativplan: Zeilenversionierung
+
+USE [master]
+GO
+ALTER DATABASE [Northwind] SET READ_COMMITTED_SNAPSHOT ON WITH NO_WAIT
+GO
+
+GO
+ALTER DATABASE [Northwind] SET ALLOW_SNAPSHOT_ISOLATION ON
+GO
 
 
 --ISOLATION LEVEL
@@ -42,7 +48,7 @@ set transaction isolation level read uncommitted
 --Lesen hindert das Ändern (update /delete)
 set transaction isolation level repeatable read
 
---Lesen hindert nun auch INS UP DEL
+--Lesen hindert nun auch zus. INS 
 set transaction isolation level serializable
 
 

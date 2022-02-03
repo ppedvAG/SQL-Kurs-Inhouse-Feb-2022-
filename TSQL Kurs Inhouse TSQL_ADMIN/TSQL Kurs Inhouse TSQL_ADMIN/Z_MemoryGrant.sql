@@ -41,7 +41,7 @@ SELECT n, REPlICATE('x', 2000) FROM #nums
 DROP TABLE #nums
 GO
 
--- Retrieve the inserted records
+--Kurzer Blick in Tabelle
 SELECT * FROM Table1
 GO
 
@@ -51,6 +51,8 @@ GO
 -- SQL Server requests a memory grant of 1.204kb - the sorting is done inside the memory.
 -- Logical reads: 4
 
+--heisst : hier läuft alles noch gut
+
 set statistics io, time on
 DECLARE @x INT
 
@@ -59,6 +61,7 @@ WHERE Column2 = 2
 ORDER BY Column3
 GO
 
+--nun weitere 799 Datensätze
 -- Insert 799 records into table Table1
 SELECT TOP 799 IDENTITY(INT, 1, 1) AS n INTO #Nums
 FROM
@@ -74,6 +77,7 @@ GO
 -- SQL Server has to spill the sort operation into TempDb, which now becomes a physical I/O operation!!!
 -- The query requests 1024KB of memory, which is too less
 -- Logical reads: 1605
+--SQL Server schätzt immer noch 1 DS aber wir haben nun 800.. also wird der notwendige Arbeitsspeicher für die Abfrage unterschätzt
 DECLARE @x INT
 
 SELECT @x = column2 FROM Table1
@@ -82,10 +86,12 @@ ORDER BY Column3
 GO
 
 -- Let's "enable" the Memory Grant Feedback by creating a dummy ColumnStore Index...
+--Seltsam, aber cool. Ein NON CL Columnstore, der keine! Daten enthält, bringt Optimierung
 CREATE NONCLUSTERED COLUMNSTORE INDEX dummy ON Table1(Column1)
 WHERE Column1 = -1 and Column1 = -2
 GO
 
+--SQL Server schätzt zuerst zu hoch
 -- The query doesn't spill over to TempDb anymore, because we request
 -- 298198KB of memory - which is too much!
 DECLARE @x INT
@@ -95,6 +101,8 @@ WHERE Column2 = 2
 ORDER BY Column3
 GO
 
+--Dann beim 2ten Ausführen etwas weniger und bei der 3ten Ausführung: passt!  ca 3MB
+--> kein Auslagern in Tempdb
 -- When we execute the query again, the Memory Grant is now finally
 -- adjusted to 3072KB, which is again a little bit too much...
 DECLARE @x INT

@@ -56,8 +56,8 @@
           <FullPath>05_Seiten und Blöcke.sql</FullPath>
         </FileNode>
         <FileNode Name="06_MAXDOP.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>06_MAXDOP.sql</FullPath>
         </FileNode>
@@ -74,16 +74,16 @@
           <FullPath>08_SystemDBs.sql</FullPath>
         </FileNode>
         <FileNode Name="20_Indizes.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>20_Indizes.sql</FullPath>
         </FileNode>
-        <FileNode Name="21_Indizes.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+        <FileNode Name="22_Problem der Prozeduren.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>21_Indizes.sql</FullPath>
+          <FullPath>22_Problem der Prozeduren.sql</FullPath>
         </FileNode>
         <FileNode Name="30_Transactions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
@@ -92,14 +92,14 @@
           <FullPath>30_Transactions.sql</FullPath>
         </FileNode>
         <FileNode Name="31_Locks setzen.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>31_Locks setzen.sql</FullPath>
         </FileNode>
         <FileNode Name="311_Locks finden.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>311_Locks finden.sql</FullPath>
         </FileNode>
@@ -116,8 +116,8 @@
           <FullPath>70_IM_Tabellen.sql</FullPath>
         </FileNode>
         <FileNode Name="80_BadView.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>80_BadView.sql</FullPath>
         </FileNode>
@@ -127,35 +127,41 @@
           <AssociatedConnUserName />
           <FullPath>90_PlanWiederverwendung.sql</FullPath>
         </FileNode>
-        <FileNode Name="Glenn Berry DMVs.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>Glenn Berry DMVs.sql</FullPath>
-        </FileNode>
         <FileNode Name="ScopedDatabase_ADR_Fill1.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>ScopedDatabase_ADR_Fill1.sql</FullPath>
         </FileNode>
         <FileNode Name="ScopedDatabase_ADR_Fill2.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>ScopedDatabase_ADR_Fill2.sql</FullPath>
         </FileNode>
         <FileNode Name="ScopedDatabase_ADR_SETUP.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>ScopedDatabase_ADR_SETUP.sql</FullPath>
         </FileNode>
-        <FileNode Name="WindowFunction.sql">
+        <FileNode Name="Tag1.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
+          <FullPath>Tag1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="WindowFunction.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
+          <AssociatedConnUserName />
           <FullPath>WindowFunction.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Z_Glenn Berry DMVs.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Z_Glenn Berry DMVs.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_Index sehen.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
@@ -164,26 +170,26 @@
           <FullPath>Z_Index sehen.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_Interleave Execution.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Z_Interleave Execution.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_MemoryGrant.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Z_MemoryGrant.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_RowMode_vs_BatchMode.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Z_RowMode_vs_BatchMode.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_Tabellenvariablen.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KAIRO:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KAIRO</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Z_Tabellenvariablen.sql</FullPath>
         </FileNode>

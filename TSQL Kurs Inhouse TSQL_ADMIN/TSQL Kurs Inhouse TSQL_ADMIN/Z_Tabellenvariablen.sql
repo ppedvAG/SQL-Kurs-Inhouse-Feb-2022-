@@ -1,10 +1,14 @@
 --Tabellenvariablen --wie werden diese geschätzt
 
+use northwind
+
 drop table if exists [TableVariableExample]
 
 
 set statistics io, time off
 GO
+--Spieltabellee mit 2 MIO Datansätzen
+
 CREATE TABLE [dbo].[TableVariableExample](
     [Id] [int] IDENTITY(1,1) NOT NULL,
     [total] [money] NULL,
@@ -30,10 +34,40 @@ BEGIN
 END
 commit
 ---------------TEST mit DB auf SQL 2012/2014 Modus
-USE [master]
+use master
 GO
-ALTER DATABASE Geotest SET COMPATIBILITY_LEVEL = 110
+ALTER DATABASE northwind SET COMPATIBILITY_LEVEL = 110
 GO
+
+use northwind
+
+
+--TEST--tatsächlichen Plan aktivieren... Anzahl der Zeilen, die geschätzt wurden in SELECT der TabVariable: 1
+DECLARE @MyTableVariable TABLE (
+       Id int,
+       total money,
+       navn char(10)
+)
+
+INSERT INTO @MyTableVariable
+SELECT* FROM TableVariableExample
+
+SET STATISTICS IO, TIME ON;
+
+SELECT 
+    Navn,
+    Total 
+FROM @MyTableVariable
+WHERE Navn = 'it-Craft'
+
+--
+--tats. Plan 1 Zeile gschätzt 
+
+
+--TEST
+ALTER DATABASE northwind SET COMPATIBILITY_LEVEL = 150
+GO
+
 
 DECLARE @MyTableVariable TABLE (
        Id int,
@@ -52,32 +86,8 @@ SELECT
 FROM @MyTableVariable
 WHERE Navn = 'it-Craft'
 
---SQL 2014
-ALTER DATABASE Geotest SET COMPATIBILITY_LEVEL = 150
-GO
-
-DECLARE @MyTableVariable TABLE (
-       Id int,
-       total money,
-       navn char(10)
-)
-
-INSERT INTO @MyTableVariable
-SELECT* FROM TableVariableExample
-
-SET STATISTICS IO, TIME ON;
-
-SELECT 
-    Navn,
-    Total 
-FROM @MyTableVariable
-WHERE Navn = 'it-Craft'
-
-
---OPTION (USE HINT('DISABLE_DEFERRED_COMPILATION_TV'));
 
 SET STATISTICS IO OFF;
 
---bei JOIN
 
---hash  loop  merge
+--Geschätzt 1414 Seiten
